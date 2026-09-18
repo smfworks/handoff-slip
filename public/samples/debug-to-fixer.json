@@ -1,0 +1,18 @@
+{
+  "schema": "smf.handoff-slip.v1",
+  "from": "Debug agent",
+  "to": "Fixer agent",
+  "goal": "Patch the failing export path without widening scope.",
+  "done": [
+    "Reproduced the PNG export hang on empty next-action",
+    "Traced it to a null frame class during html-to-image",
+    "Added a failing unit around the empty-state guard"
+  ],
+  "risks": [
+    "Fix may regress the ?shot=card screenshot path",
+    "Do not touch the paste splitter in the same PR"
+  ],
+  "next": "Guard the export frame, add a test, open a focused PR.",
+  "session": "this session",
+  "priority": "URGENT"
+}

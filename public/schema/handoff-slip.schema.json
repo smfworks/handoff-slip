@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/smfworks/handoff-slip/blob/main/public/schema/handoff-slip.schema.json",
+  "title": "HandoffSlip",
+  "description": "Machine-readable agent-to-agent (or human↔agent) baton pass: from, to, goal, done so far, open risks, next action. Other tools can emit this shape so Handoff Slip can print a PASS card. This is a communication artifact, not a workflow runtime.",
+  "type": "object",
+  "required": ["from", "to", "goal", "next"],
+  "additionalProperties": true,
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "smf.handoff-slip.v1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^HS-[0-9A-F]{4}$",
+      "description": "Slip serial printed on the stamp."
+    },
+    "from": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Who is handing off (agent or human)."
+    },
+    "sender": {
+      "type": "string",
+      "description": "Alias for from."
+    },
+    "to": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Who receives the baton."
+    },
+    "receiver": {
+      "type": "string",
+      "description": "Alias for to."
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 1,
+      "description": "What this work is for."
+    },
+    "objective": {
+      "type": "string",
+      "description": "Alias for goal."
+    },
+    "done": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Done so far — bullets the next agent should not redo."
+    },
+    "doneSoFar": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alias for done."
+    },
+    "progress": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alias for done."
+    },
+    "risks": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Open risks the next agent should not miss."
+    },
+    "openRisks": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alias for risks."
+    },
+    "next": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Single clear next action."
+    },
+    "nextAction": {
+      "type": "string",
+      "description": "Alias for next."
+    },
+    "session": {
+      "type": "string",
+      "description": "Optional session / window label."
+    },
+    "date": {
+      "type": "string",
+      "description": "Optional date label (YYYY-MM-DD or free text)."
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["NORMAL", "URGENT"],
+      "description": "Stamp class. Default NORMAL."
+    },
+    "issuedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "heuristic": {
+      "type": "boolean",
+      "const": true,
+      "description": "Always true — this is a demo printer, not a workflow engine."
+    }
+  }
+}

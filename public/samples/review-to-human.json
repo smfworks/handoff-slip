@@ -1,0 +1,19 @@
+{
+  "schema": "smf.handoff-slip.v1",
+  "from": "Review bot",
+  "to": "Staff engineer",
+  "goal": "Human decides merge. Comments only — no push, no approve-as-human.",
+  "done": [
+    "Commented on every changed file or marked explicit LGTM",
+    "Called two blockers with file and line",
+    "Posted a short risk summary on the PR"
+  ],
+  "risks": [
+    "CI secrets appear in one fixture — needs a human look",
+    "Suggested refactor would rewrite history if applied blindly"
+  ],
+  "next": "Read the two blockers, then merge or send back. Agent stops here.",
+  "session": "this PR",
+  "date": "2026-09-18",
+  "priority": "NORMAL"
+}
