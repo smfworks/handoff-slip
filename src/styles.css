@@ -937,8 +937,8 @@ select:focus {
 }
 
 .btn-go:disabled {
-  background: #163226;
-  color: #6d8a78;
+  background: #151c30;
+  color: #6b7388;
 }
 
 .btn-ghost {
