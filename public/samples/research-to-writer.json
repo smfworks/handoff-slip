@@ -1,0 +1,19 @@
+{
+  "schema": "smf.handoff-slip.v1",
+  "from": "Literature scout",
+  "to": "Brief writer",
+  "goal": "Turn the repo survey into a one-page brief a human can ship.",
+  "done": [
+    "Mapped the four public APIs and their auth surfaces",
+    "Cited sources with paths; flagged two stale docs",
+    "Listed open questions instead of inventing answers"
+  ],
+  "risks": [
+    "Rate-limit notes in README may be outdated",
+    "One cited paper is paywalled — do not paraphrase as if read"
+  ],
+  "next": "Write the one-pager from the cited map; leave send to the human.",
+  "session": "this session",
+  "date": "2026-09-18",
+  "priority": "NORMAL"
+}

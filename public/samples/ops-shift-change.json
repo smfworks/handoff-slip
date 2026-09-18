@@ -1,0 +1,19 @@
+{
+  "schema": "smf.handoff-slip.v1",
+  "from": "Night ops agent",
+  "to": "Morning on-call",
+  "goal": "Keep the lab stack green through the shift change; no deploys after 02:00.",
+  "done": [
+    "Restarted the hung preview box; logs rotated",
+    "Queued two non-urgent alerts for daylight",
+    "Confirmed kill-switch is off and egress allowlist unchanged"
+  ],
+  "risks": [
+    "Disk on spark-3 is at 81% — will page if it crosses 85",
+    "A vendor status page still shows degraded DNS"
+  ],
+  "next": "Watch disk on spark-3; do not deploy until the human is on.",
+  "session": "night → morning",
+  "date": "2026-09-18",
+  "priority": "URGENT"
+}
