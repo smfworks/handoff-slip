@@ -181,7 +181,7 @@ export default function App() {
     <div className="page">
       <div className="ambient" aria-hidden="true" />
       <Header />
-      <SisterStrip />
+      <SisterStrip current="handoff-slip" />
       <main className="layout">
         <Composer
           draft={draft}
