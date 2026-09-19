@@ -17,6 +17,7 @@ import { Composer } from "./components/Composer";
 import { HandoffCard } from "./components/HandoffCard";
 import { Header } from "./components/Header";
 import { SisterStrip } from "./components/SisterStrip";
+import { HandoffBanner } from "./components/HandoffBanner";
 import { Toast } from "./components/Toast";
 import { formatCompactStats, formatShareText } from "./lib/share";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -181,7 +182,8 @@ export default function App() {
     <div className="page">
       <div className="ambient" aria-hidden="true" />
       <Header />
-      <SisterStrip current="handoff-slip" />
+      <SisterStrip current="handoff-slip" payload={paste || JSON.stringify(draft)} />
+      <HandoffBanner onPaste={(text) => { setPaste(text); setSampleId(null); }} />
       <main className="layout">
         <Composer
           draft={draft}
